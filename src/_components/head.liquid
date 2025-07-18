@@ -1,0 +1,8 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% if title and title != "Index" %}{{ title }} | {{ metadata.title }}{% else %}{{ metadata.title }}: {{ metadata.tagline }}{% endif %}</title>
+<meta name="description" content="{{ metadata.description }}" />
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="{% asset_path css %}" />
+<script src="{% asset_path js %}" defer></script>

@@ -1,0 +1,41 @@
+- nome: Santa Catarina de Alexandria
+  imagem: /imagens/comunidades/santa-catarina.jpg
+  endereco: Avenida Lourenço Zácaro, 961 - Jardim São Silvestre
+  horarios:
+    - Terça-feira 20:00
+    - Domingo 09:00 e 19:30
+
+- nome: Nossa Senhora de Fátima
+  imagem: /imagens/comunidades/ns-fatima.jpg
+  endereco: Rua Major Álvaro Fontes, 561 - Vila Engenho Novo
+  horarios:
+    - Quarta-feira 19:30
+    - Domingo 09:00
+
+- nome: Nossa Senhora das Graças
+  imagem: /imagens/comunidades/ns-gracas.jpg
+  endereco: Rua Mar de Java, 344 - Jardim Flórida
+  horarios:
+    - Sexta-feira 19:30
+    - Domingo 10:30
+
+- nome: Nossa Senhora Aparecida
+  imagem: /imagens/comunidades/ns-aparecida.jpg
+  endereco: Rua Lorena, 514 - Vila Engenho Novo
+  horarios:
+    - Terça-feira 20:00
+    - Sábado 18:30
+
+- nome: São Judas Tadeu
+  imagem: /imagens/comunidades/sao-judas.jpg
+  endereco: Rua Carajás, 485 - Vila São Silvestre
+  horarios:
+    - Quarta-feira 19:30
+    - Sábado 20:00
+
+- nome: Santo Expedito
+  imagem: /imagens/comunidades/santo-expedito.jpg
+  endereco: Rua Ranchária, 135 - Jardim Graziela
+  horarios:
+    - Terça-feira 20:00
+    - Domingo 09:00

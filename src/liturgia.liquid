@@ -1,0 +1,175 @@
+---
+layout: default
+title: "Liturgia Diária"
+---
+
+<div class="container my-5">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/"><i class="fas fa-arrow-left me-1"></i>Home</a>
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<div class="container mt-5 pt-3">
+  <div class="row" style="margin-bottom: 60px;">
+    <div class="col-8">
+      <h1 class="mb-4">Liturgia Diária</h1>
+    </div>
+    <div class="col-4">
+      <form id="formLiturgia" class="mb-0">
+        <div class="input-group">
+          <input
+            type="date"
+            id="inputData"
+            class="form-control"
+            name="data"
+            value="{{ 'now' | date: '%Y-%m-%d' }}"
+          >
+          <button class="btn btn-outline-dark" type="submit">Buscar</button>
+        </div>
+      </form>
+      <p class="mt-0"><small>Pesquise as datas necessárias</small></p>
+    </div>
+  </div>
+
+  <div id="liturgiaContainer">
+    {% assign liturgia = site.data.liturgia_hoje %}
+    {% if liturgia %}
+      {% assign cor_liturgica = liturgia.cor | downcase %}
+      {% assign cor_tag = '' %}
+      {% case cor_liturgica %}
+        {% when 'branco' %} {% assign cor_tag = 'bg-light text-dark' %}
+        {% when 'vermelho' %} {% assign cor_tag = 'bg-danger text-white' %}
+        {% when 'verde' %} {% assign cor_tag = 'bg-success text-white' %}
+        {% when 'roxo' %} {% assign cor_tag = 'bg-purple text-white' %}
+        {% else %} {% assign cor_tag = 'bg-secondary text-white' %}
+      {% endcase %}
+
+      <div class="d-flex flex-wrap justify-content-center mb-5 gap-3">
+        <div class="badge bg-dark text-white">Data</div>
+        <div class="badge bg-info text-dark">{{ liturgia.data }}</div>
+
+        <div class="badge bg-dark text-white">Tipo</div>
+        <div class="badge bg-primary text-white">{{ liturgia.liturgia }}</div>
+
+        <div class="badge bg-dark text-white">Cor</div>
+        <div class="badge {{ cor_tag }}">{{ liturgia.cor }}</div>
+      </div>
+
+      {% assign oracoes = liturgia.oracoes %}
+      {% assign leituras = liturgia.leituras %}
+      {% assign antifonas = liturgia.antifonas %}
+
+      {% if antifonas.entrada %}
+        <h5><strong>Antífona de Entrada</strong></h5>
+        <p>{{ antifonas.entrada }}</p>
+      {% endif %}
+
+      {% if oracoes.coleta %}
+        <h5><strong>Oração do Dia / Coleta</strong></h5>
+        <p>{{ oracoes.coleta | newline_to_br }}</p>
+      {% endif %}
+
+      <hr>
+
+      <h5><strong>Leituras</strong></h5>
+      <div class="mb-4 d-flex flex-wrap gap-2">
+        {% for secao in leituras %}
+          {% assign nome_secao = secao[0] %}
+          {% assign leituras_lista = secao[1] %}
+          {% if leituras_lista.size > 0 %}
+            {% assign nome_formatado = '' %}
+            {% assign classe_badge = 'bg-info text-white' %}
+            {% assign classe_box = 'border-info' %}
+            {% case nome_secao %}
+              {% when 'primeiraLeitura' %} {% assign nome_formatado = 'Primeira Leitura' %}
+              {% when 'segundaLeitura' %} {% assign nome_formatado = 'Segunda Leitura' %}
+              {% when 'salmo' %}
+                {% assign nome_formatado = 'Salmo' %}
+                {% assign classe_badge = 'bg-primary text-white' %}
+                {% assign classe_box = 'border-primary' %}
+              {% when 'evangelho' %}
+                {% assign nome_formatado = 'Evangelho' %}
+                {% assign classe_badge = 'bg-success text-white' %}
+                {% assign classe_box = 'border-success' %}
+              {% else %}
+                {% assign nome_formatado = nome_secao %}
+            {% endcase %}
+            <span class="badge {{ classe_badge }} rounded-pill cursor-pointer"
+              role="button"
+              onclick="toggleLeitura('{{ nome_secao }}', event)"
+              data-id="{{ nome_secao }}">
+              {{ nome_formatado }}
+              <i class="far fa-eye ms-1 leitura-icon d-none"></i>
+            </span>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% for secao in leituras %}
+        {% assign nome_secao = secao[0] %}
+        {% assign leituras_lista = secao[1] %}
+        {% if leituras_lista.size > 0 %}
+          {% assign classe_border = 'border-info' %}
+          {% case nome_secao %}
+            {% when 'salmo' %} {% assign classe_border = 'border-primary' %}
+            {% when 'evangelho' %} {% assign classe_border = 'border-success' %}
+          {% endcase %}
+          <div id="leitura-{{ nome_secao }}" class="border {{ classe_border }} rounded p-3 mb-4 d-none leitura-box">
+            {% for leitura in leituras_lista %}
+              {% if leitura.tipo %}
+                <h6>{{ leitura.tipo }}</h6>
+              {% endif %}
+              {% if leitura.titulo %}
+                <p><strong>{{ leitura.titulo }}</strong> – {{ leitura.referencia }}</p>
+              {% elsif leitura.referencia %}
+                <p><strong>{{ leitura.referencia }}</strong></p>
+              {% endif %}
+              {% if leitura.refrao %}
+                <p class="fw-bold text-info">Ref: {{ leitura.refrao }}</p>
+              {% endif %}
+              <p>{{ leitura.texto | newline_to_br }}</p>
+              <br>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <hr>
+
+      {% if oracoes.oferendas %}
+        <h5><strong>Oração sobre as Oferendas</strong></h5>
+        <p>{{ oracoes.oferendas | newline_to_br }}</p>
+      {% endif %}
+
+      <hr>
+
+      {% if antifonas.comunhao %}
+        <h5><strong>Antífona de Comunhão</strong></h5>
+        <p>{{ antifonas.comunhao }}</p>
+      {% endif %}
+
+      <hr>
+
+      {% if oracoes.comunhao %}
+        <h5><strong>Oração após a Comunhão</strong></h5>
+        <p>{{ oracoes.comunhao | newline_to_br }}</p>
+      {% endif %}
+
+      {% if oracoes.extras and oracoes.extras.size > 0 %}
+        <hr>
+        <h4><strong>Partes Litúrgicas Especiais</strong></h4>
+        {% for extra in oracoes.extras %}
+          <h5>{{ extra.titulo }}</h5>
+          <p>{{ extra.texto | newline_to_br }}</p>
+          <br>
+        {% endfor %}
+      {% endif %}
+    {% else %}
+      <div class="alert alert-warning">Liturgia não disponível.</div>
+    {% endif %}
+  </div>
+</div>

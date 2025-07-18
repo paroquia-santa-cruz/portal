@@ -1,0 +1,23 @@
+- titulo: "A fé no cotidiano"
+  autor: "Pe. João Carlos"
+  data: "2025-07-10"
+  imagem: "/assets/images/blog1.jpg"
+  resumo: "Como viver a espiritualidade nos pequenos gestos do dia a dia. Uma reflexão simples e profunda."
+  conteudo: |
+    A fé não se resume aos grandes momentos. No cotidiano, é que ela ganha forma: na escuta, no perdão, na paciência com o outro...
+
+- titulo: "A importância da oração em família"
+  autor: "Maria das Dores (Leiga)"
+  data: "2025-07-08"
+  imagem: "/assets/images/blog2.jpg"
+  resumo: "A oração une os lares e fortalece a presença de Deus entre nós. Veja como cultivar esse hábito."
+  conteudo: |
+    Rezar juntos é uma forma de ensinar os filhos, de unir os cônjuges, e de consagrar nosso lar ao Senhor...
+
+- titulo: "Reflexão sobre o Evangelho do dia"
+  autor: "Equipe de Liturgia"
+  data: "2025-07-07"
+  imagem: "/assets/images/blog3.jpg"
+  resumo: "Breve meditação sobre o Evangelho desta segunda-feira e como aplicá-lo na vida concreta."
+  conteudo: |
+    Hoje o Senhor nos convida a acolher o próximo com humildade. Somos chamados a abrir o coração aos pequenos...

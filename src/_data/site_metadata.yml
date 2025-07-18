@@ -1,0 +1,41 @@
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.metadata.title }}, {{ site.metadata.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.metadata.myvariable }}.
+
+meses: "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro"
+
+ 
+description: >-
+  Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+
+paroquia: >-
+  No coração de Barueri, uma história de fé, perseverança e milagres se desenrola através dos séculos. A Paróquia Santa Cruz, cujas raízes remontam ao século XVIII, nasceu de uma trilha sagrada e se tornou um farol de esperança para toda a comunidade.
+
+caminho: >-
+  Tudo começou com a descoberta milagrosa de uma imagem do Senhor Bom Jesus em 1725. Esta revelação divina deu origem à Capela de Pirapora, que logo se tornou um destino de peregrinação. Para guiar os fiéis através das densas matas e estradas precárias, os jesuítas ergueram cruzes de madeira ao longo do caminho, criando pontos de descanso e oração.
+
+cruz_abencoou: >-
+  Uma dessas cruzes, fervida em betume para resistir ao tempo, foi plantada onde hoje se ergue a Matriz de Santa Cruz. Esta cruz não era apenas um marco, mas um símbolo vivo da fé que unia os peregrinos. Com o crescimento da comunidade, uma capela maior foi construída, e a cruz original, carregada de histórias e orações, foi cuidadosamente cortada e colocada atrás do altar, como guardiã silenciosa dos fiéis.
+
+pequeno: >-
+  Em 1945 Vitorino Calegari e Rosina Pasquotto chegam a região e se juntam famílias Rosa, Cruz, Espirito Santo, Silveira, Crudo, Fontes, entre outras, com essa forte comunidade a pequena capela evoluiu. Conhecida pelas festas animadas que atraíam pessoas de toda a região, logo ganhou o carinhoso apelido de "Cruz Preta", nome que acabou batizando todo o bairro. A fé e a união da comunidade, mesmo nos momentos mais desafiadores, o espírito de colaboração prevalecia.
+
+perda: >-
+  Nos anos 80, a necessidade de expansão levou à demolição da antiga capela. Tragicamente, a cruz original, testemunha de tantos milagres e orações, foi perdida neste processo. Mas a comunidade se uniu para erguer uma nova e mais ampla igreja, simbolizando o renascimento e a força inabalável de sua fé.
+
+florecer: >-
+  Em 1999, o sonho de elevar Santa Cruz à condição de paróquia se concretizou. Sob a liderança de dedicados sacerdotes, a paróquia floresceu, tornando-se um centro vibrante de fé e ação comunitária. Cada pároco deixou sua marca, expandindo não apenas o espaço físico, mas também o alcance espiritual da comunidade.
+
+presente_futuro: >-
+  Vários padres contribuíram para o crescimento da paróquia, incluindo Pe. Adinael, Pe. Edilson e Pe. Marcio. Hoje, sob a liderança inspiradora do Padre Ricardo Rodrigues, a Paróquia Santa Cruz continua sua jornada de fé e serviço, mantém viva a chama da devoção e do compromisso comunitário, preparando a paróquia para enfrentar os desafios do futuro com a mesma coragem e fé que caracterizaram sua história desde o início.
+
+novo_capitulo: >-
+  Em um emocionante desenvolvimento, a Paróquia Santa Cruz está agora embarcando em uma nova fase de sua história gloriosa. A comunidade, unida em propósito e fé, iniciou o processo de construção de uma nova matriz. Este ambicioso projeto não é apenas uma expansão física, mas um testemunho vivo do crescimento espiritual e da força inabalável desta comunidade.<br><br>
+  A nova matriz será mais do que um edifício; será um símbolo do compromisso contínuo da paróquia com a fé, a comunidade e o futuro. Assim como a cruz original guiou os peregrinos através das matas densas, esta nova estrutura servirá como um farol de esperança e inspiração para as gerações vindouras.<br><br>
+  À medida que os alicerces são lançados e as paredes começam a se erguer, cada membro da comunidade contribui não apenas com recursos, mas com orações, esperanças e sonhos. A construção da nova matriz é um testemunho vivo de que a história da Paróquia Santa Cruz continua a ser escrita, com cada tijolo representando a fé inabalável e o espírito indomável de seus fiéis.<br><br>
+  A história da Paróquia Santa Cruz é um testemunho vivo de como a fé pode mover montanhas, unir pessoas e transformar uma simples cruz de madeira em um farol de esperança para gerações. Cada tijolo de sua estrutura, cada nota de seus hinos, cada oração sussurrada em seus bancos carrega consigo o eco de uma história rica em milagres, perseverança e amor incondicional. E agora, com a construção da nova matriz, essa história gloriosa ganha um novo e emocionante capítulo, prometendo um futuro tão brilhante quanto seu passado inspirador.
+
+calegare: >-
+  Baseada nos relatos do Sr. Pedro Luiz Calegare, do texto “História da Capela Santa Cruz e do Bairro da Cruz Preta” - Novembro de 2024.

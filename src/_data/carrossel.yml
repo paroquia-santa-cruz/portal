@@ -1,0 +1,10 @@
+- src: /images/aparecida.jpg
+  position: center center
+- src: /images/corpo.jpg
+  position: center center
+- src: /images/kolbe.jpg
+  position: 50% 10% 
+- src: /images/pio.jpg
+  position: 50% 30% 
+- src: /images/tomas.jpg
+  position: center 25%

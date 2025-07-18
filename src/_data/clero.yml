@@ -1,0 +1,31 @@
+papa:
+  nome: "Papa Leão XIV"
+  foto: "/assets/images/papa.jpg"
+
+bispos:
+  - nome: "Dom A"
+    foto: "/assets/images/bispos/bispo-a.jpg"
+  - nome: "Dom B"
+    foto: "/assets/images/bispos/bispo-b.jpg"
+  - nome: "Dom C"
+    foto: "/assets/images/bispos/bispo-c.jpg"
+
+padres:
+  - nome: "Pe. A"
+    foto: "/assets/images/padres/pe-jose.jpg"
+    
+  - nome: "Pe. B"
+    foto: "/assets/images/padres/pe-antonio.jpg"
+
+  - nome: "Pe. C"
+    foto: "/assets/images/padres/pe-jose.jpg"
+
+  - nome: "Pe. Ricardo Rodrigues dos Santos"
+    foto: "/assets/images/padres/ricardo.jpg"
+    situacao: "Administrador paroquial"
+    inicio: "2024-05-16"
+
+  - nome: "Pe. Vinícius Rocha de Oliveira"
+    foto: "/assets/images/padres/vinicius.jpg"
+    situacao: "Vigário paroquial"
+    inicio: "2023-12-21"

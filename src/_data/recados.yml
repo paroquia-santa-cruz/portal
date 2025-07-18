@@ -1,0 +1,40 @@
+- titulo: "Batismo"
+  subtitulo: "Relação de documentos para: Batismo"
+  data: "15 de julho"
+  resumo: "Estão abertas as inscrições para batismos."
+  descricao: "> Certidão de nascimento do batizando<br>
+              > RG e Comprovante de residência dos pais<br>
+              > RG e Comprovante de residência dos padrinhos<br>
+              > Certificado do curso de batismo dos pais<br>
+              > Certificado do curso de batismo dos padrinhos<br>
+              > Certidão de batismo dos padrinhos<br>
+              > Certidão de casamento dos padrinhos (caso sejam casados)"
+  imagem: "/assets/images/recados/batismo.jpg"
+
+- titulo: "Casamento"
+  subtitulo: "Relação de documentos para: Casamento"
+  data: "12 de julho"
+  resumo: "Casais que planejam se casar ainda este ano devem se inscrever."
+  descricao: "> RG e comprovante de residência dos noivos<br>
+              > RG e comprovante de residência do casal de padrinhos<br>
+              > Certidão de batismo dos noivos<br>
+              > Certidão de casamento do civil<br>
+              > Certificado do curso de noivos<br>
+              > Profissão e estado civil dos noivos<br>
+              > Profissão e estado civil do casal de padrinhos<br>
+              > Certidão de Batismo dos padrinhos (caso sejam solteiros) ou,<br>
+              > Certidão de Casamento dos padrinhos (caso sejam casados)"
+  imagem: "/assets/images/recados/batismo.jpg"
+
+- titulo: "Primeira Comunhão"
+  subtitulo: "Relação de documentos para: Primeira Comunhão"
+  data: "10 de julho"
+  resumo: "xyz"
+  descricao: "> A <br>
+              > B <br>
+              > C <br>
+              > D <br>
+              > E <br>
+              > F <br>
+              > G"
+  imagem: "/assets/images/recados/batismo.jpg"

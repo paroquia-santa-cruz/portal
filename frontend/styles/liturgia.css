@@ -1,0 +1,94 @@
+/* Estilo geral da seção de liturgia */
+#liturgiaContainer {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  transition: all 0.3s ease-in-out;
+}
+
+#liturgiaContainer h5,
+#liturgiaContainer h6 {
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Botões interativos de leitura */
+.leitura-box {
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.badge[role="button"] {
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.badge[role="button"]:hover {
+  transform: scale(1.05);
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+/* Ícone de olho */
+.leitura-icon {
+  transition: opacity 0.3s;
+}
+
+.leitura-icon.d-none {
+  opacity: 0;
+}
+
+/* Acessibilidade e responsividade */
+input[type="date"] {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  #liturgiaContainer {
+    font-size: 1rem;
+  }
+
+  .badge {
+    font-size: 0.9rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .input-group input,
+  .input-group button {
+    width: 100%;
+  }
+}
+
+/* Separadores visuais */
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 2rem 0;
+}
+
+/* Refrões em destaque */
+.text-info.fw-bold {
+  font-size: 1.05rem;
+  color: #0d6efd !important;
+}
+
+/* Badge de categorias (Data, Tipo, Cor, etc.) */
+.d-flex.flex-wrap .badge {
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Animação simples na exibição */
+#liturgiaContainer .leitura-box {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

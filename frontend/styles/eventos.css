@@ -1,0 +1,21 @@
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.btn-outline-dark {
+  border-color: #e0c15e;
+  color: #333;
+}
+
+.btn-outline-dark:hover {
+  background-color: #e0c15e;
+  color: white;
+}

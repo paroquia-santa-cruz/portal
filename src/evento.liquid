@@ -1,0 +1,55 @@
+---
+layout: default
+title: "Eventos"
+---
+
+<div class="container my-5">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/"><i class="fas fa-arrow-left me-1"></i>Home</a>
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<div class="container mt-5 pt-5">
+  <h2 class="mb-4">Próximos Eventos</h2>
+  <div class="row">
+    {% for evento in site.data.eventos %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ evento.imagem }}" class="card-img-top" alt="{{ evento.titulo }}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ evento.titulo }}</h5>
+          <p class="card-text text-muted"><i class="far fa-calendar-alt me-2"></i>{{ evento.data }}</p>
+          <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i>{{ evento.local }}</p>
+          <p class="card-text text-muted"><i class="fas fa-ticket-alt me-2"></i>{{ evento.tipo }}</p>
+          <button class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#modalEvento{{ forloop.index }}">
+            SAIBA MAIS
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalEvento{{ forloop.index }}" tabindex="-1" aria-labelledby="modalLabel{{ forloop.index }}" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel{{ forloop.index }}">{{ evento.titulo }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Data:</strong> {{ evento.data }}</p>
+            <p><strong>Horário:</strong> {{ evento.horario }}</p>
+            <p><strong>Local:</strong> {{ evento.local }}</p>
+            <p><strong>Tipo:</strong> {{ evento.tipo }}</p>
+            <p><strong>Descrição:</strong> {{ evento.descricao }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

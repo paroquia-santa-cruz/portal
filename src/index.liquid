@@ -1,0 +1,228 @@
+---
+layout: default
+title: "Página Inicial"
+---
+
+<div id="carouselExample" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
+  <div class="carousel-inner">
+    {% for item in site.data.carrossel %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <img
+          src="{{ item.src }}"
+          class="d-block w-100 carousel-img"
+          alt="Imagem {{ forloop.index }}"
+          style="object-position: {{ item.position }};"
+        >
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="d-flex align-items-center bg-light rounded p-3 shadow-sm">
+    <img 
+      src="/assets/images/socio-operario-biblia.png" 
+      alt="Campanha Bíblia Personalizada" 
+      class="me-3" 
+      style="width: 150px; height: auto; border-radius: 8px;"
+    >
+
+    <div class="d-flex flex-column align-items-center me-4">
+      <img 
+        src="/assets/images/socio-operario-logo.png" 
+        alt="Logo Sócio Operário" 
+        style="height: 80px; width: auto;"
+      >
+    </div>
+
+    <div class="flex-grow-1 ps-3">
+      <h5 class="fw-bold mb-2">CAMPANHA SÓCIOS-OPERÁRIOS</h5>
+      <p class="mb-0">
+        Cadastre-se como um sócio operário e contribua com o projeto de revitalização da nossa Igreja Matriz.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <h1 class="section-title mb-4">HORÁRIOS PAROQUIAIS</h1>
+
+  <div class="row mb-5">
+    <div class="col-6 me-4">
+      <h5 class="mb-4">Santa Missa</h5>
+      <div class="schedule-box">
+        <div class="schedule-item">
+          <strong>Domingos</strong><br>07:30, 10:30 e 18:00
+        </div>
+        <div class="schedule-item">
+          <strong>Quinta-feira</strong><br>07:30, 10:30 e 18:00
+        </div>
+        <div class="schedule-item">
+          <strong>Sexta-feira</strong><br>07:30, 10:30 e 18:00
+        </div>
+      </div>
+    </div>
+
+    <div class="col-auto ms-5">
+      <h5 class="mb-4">Confissões</h5>
+      <div class="schedule-box">
+        <div class="schedule-item">
+          <strong>Domingos</strong><br>07:30, 10:30 e 18:00
+        </div>
+        <div class="schedule-item">
+          <strong>Quinta-feira</strong><br>07:30, 10:30 e 18:00
+        </div>
+        <div class="schedule-item">
+          <strong>Sexta-feira</strong><br>07:30, 10:30 e 18:00
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="info-box">
+        <p><strong>Fortalecimento</strong> Quintas às 20:00</p>
+        <p><strong>Famílias</strong> 1º Domingo às 10:30</p>
+        <p><strong>Dizimista</strong> 2º Domingo às 07:30, 10:30 e 18:00</p>
+        <p><strong>Sócios Operários</strong> 3º Domingo às 07:30, 10:30 e 18:00</p>
+        <p><strong>Desagravo ao Sagrado Coração</strong> 1ª Sexta às 20:00</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="info-box">
+        <p><strong>Eventos fixos</strong></p>
+        <p><strong>Terço dos homens</strong> Última Segunda às 20:00</p>
+        <p><strong>Mulheres que oram</strong> 2ª Sexta às 20:00</p>
+        <p><strong>Escola da fé</strong> Quartas às 19:30</p>
+        <p><strong>Mutirão da limpeza</strong> Quartas às 15:00</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="info-box">
+        <p><strong>Confissões</strong></p>
+        <p><strong>Terça-feira</strong> das 09:00 às 11:00</p>
+        <p><strong>Quinta-feira</strong> das 15:00 às 17:00</p>
+        <p><strong>Sábado</strong> das 09:00 às 11:00</p>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+{% assign meses = site.metadata.meses | split: "," %}
+
+<div class="container my-5 mt-5">
+  <h1 class="section-title mb-4 mt-5">NOSSO CLERO</h1>
+  <div class="row">
+    {% for padre in site.data.clero.padres %}
+      {% if padre.situacao %}
+        {% assign dia = padre.inicio | date: "%-d" %}
+        {% assign mes_index = padre.inicio | date: "%-m" | minus: 1 %}
+        {% assign mes_nome = meses[mes_index] %}
+        {% assign ano = padre.inicio | date: "%Y" %}
+
+        <div class="col-md-6 mb-4 mt-3">
+          <div class="d-flex align-items-center gap-3">
+            <img src="{{ padre.foto }}" alt="{{ padre.nome }}" class="rounded-circle" style="width: 70px; height: 70px; object-fit: cover;">
+            <div>
+              <h5 class="mb-1" style="font-weight: 600;">{{ padre.nome }}</h5>
+              <p class="mb-0 text-muted">{{ padre.situacao }}</p>
+              {% if padre.inicio %}
+                <p class="mb-0 fw-semibold">Desde {{ dia }} de {{ mes_nome }} de {{ ano }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="container my-5"> 
+  <h1 class="section-title mb-4 mt-5">PRÓXIMOS EVENTOS</h1>
+
+  <div class="row">
+    {% assign proximos_eventos = site.data.eventos | slice: 0, 3 %}
+    {% for evento in proximos_eventos %}
+      <div class="col-md-4 mb-4 mt-3">
+        <div class="card h-100 shadow-sm">
+          <img src="{{ evento.imagem }}" class="card-img-top" alt="{{ evento.titulo }}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ evento.titulo }}</h5>
+            <p class="card-text text-muted"><i class="far fa-calendar-alt me-2"></i>{{ evento.data }}</p>
+            <p class="card-text text-muted"><i class="fas fa-map-marker-alt me-2"></i>{{ evento.local }}</p>
+            <p class="card-text text-muted"><i class="fas fa-ticket-alt me-2"></i>{{ evento.tipo }}</p>
+            <button class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#modalEventoHome{{ forloop.index }}">
+              SAIBA MAIS
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="modalEventoHome{{ forloop.index }}" tabindex="-1" aria-labelledby="modalLabelHome{{ forloop.index }}" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabelHome{{ forloop.index }}">{{ evento.titulo }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong>Data:</strong> {{ evento.data }}</p>
+              <p><strong>Horário:</strong> {{ evento.horario }}</p>
+              <p><strong>Local:</strong> {{ evento.local }}</p>
+              <p><strong>Tipo:</strong> {{ evento.tipo }}</p>
+              <p><strong>Descrição:</strong> {{ evento.descricao }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="text-center mt-4 mb-5">
+    <a href="/evento" class="btn btn-warning text-uppercase fw-bold px-4 py-2">
+      CALENDÁRIO COMPLETO
+    </a>
+  </div>
+</div>
+
+<div class="container my-5">
+  <h1 class="section-title mb-4 mt-5">NOSSAS COMUNIDADES</h1>
+
+  <div class="row gx-5">
+    {% for comunidade in site.data.comunidades %}
+      <div class="col-md-6 mb-4 m">
+        <div class="d-flex p-3 gap-3 shadow-sm rounded bg-white h-100">
+          <img src="{{ comunidade.imagem }}" alt="{{ comunidade.nome }}" class="rounded" style="width: 120px; height: 120px; object-fit: cover;">
+          <div>
+            <h5 class="fw-bold">{{ comunidade.nome }}</h5>
+            <p class="mb-1">{{ comunidade.endereco }} <i class="fas fa-map-marker-alt text-warning ms-1"></i></p>
+            <p class="mb-1 fw-semibold">Missas e Celebrações</p>
+            {% for horario in comunidade.horarios %}
+              <p class="mb-0">{{ horario }}</p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="container my-5">
+  <h1 class="section-title mb-4">BLOG DA CRUZ</h1>
+  <p class="lead mt-4">
+    Não deixe de acessar nosso mais novo <strong>Blog da Cruz</strong> — um espaço dedicado a você! 
+    Aqui, você encontrará notícias atualizadas da nossa comunidade, recados importantes, opiniões inspiradoras e conteúdos que aproximam nossa fé e vida cotidiana.
+  </p>
+  <p class="mb-4">
+    Quer ficar por dentro dos eventos, reflexões e novidades da Paróquia? O Blog da Cruz é o lugar certo para se conectar, aprender e participar ativamente.
+  </p>
+  <div class="text-center">
+    <a href="/evento" class="btn btn-warning text-uppercase fw-bold px-4 py-2" role="button" aria-label="Acessar o Blog da Cruz">
+      ACESSAR BLOG
+    </a>
+  </div>
+</div>

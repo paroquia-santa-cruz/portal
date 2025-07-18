@@ -1,0 +1,96 @@
+---
+layout: default
+title: "A paróquia"
+---
+
+<div class="container my-5">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/"><i class="fas fa-arrow-left me-1"></i>Home</a>
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<div class="container my-5">
+  <h3 class="mb-4">A Saga da Paróquia Santa Cruz: Uma Jornada de Fé</h3>
+
+  <div class="mb-4 text-center">
+    <img src="/assets/images/historia-principal.jpg" alt="Paróquia Santa Cruz" class="historia-img">
+  </div>
+
+  <p class="mb-4">{{ site.metadata.paroquia }}</p>
+
+  <h4 class="historia-section">O Caminho dos Peregrinos</h4>
+  <p>{{ site.metadata.caminho }}</p>
+
+  <h4 class="historia-section">A Cruz que Abençoou uma Comunidade</h4>
+  <p>{{ site.metadata.cruz_abencoou }}</p>
+
+  <h4 class="historia-section">Do Pequeno ao Grandioso</h4>
+  <p>{{ site.metadata.pequeno }}</p>
+
+  <h4 class="historia-section">Uma Perda Sentida e um Renascimento</h4>
+  <p>{{ site.metadata.perda }}</p>
+
+  <h4 class="historia-section">O Florescer de uma Paróquia</h4>
+  <p>{{ site.metadata.florecer }}</p>
+
+  <h4 class="historia-section">O Presente e o Futuro</h4>
+  <p>{{ site.metadata.presente_futuro }}</p>
+
+  <h4 class="historia-section">Um Novo Capítulo se Inicia</h4>
+  <div class="mb-4 text-center">
+    <img src="/assets/images/historia-atual.jpg" alt="Novo capítulo" class="historia-img">
+  </div>
+  <p>{{ site.metadata.novo_capitulo }}</p>
+
+  <small class="d-block mt-4 historia-editorial">
+    <p class="mb-0">{{ site.metadata.calegare }}</p>
+    <p class="mt-0">
+      Editorial:
+      <a href="https://www.instagram.com/anaceciliasouza/" target="_blank" style="text-decoration: underline; color: inherit;">
+        Ana Cecília Souza
+      </a> – Paróquia Santa Cruz
+    </p>
+  </small>
+</div>
+
+<div class="container my-5 text-center clero-section">
+  <h3>Clero</h3>
+
+  <div class="clero-subsection mt-5">
+    <h5>Papa</h5>
+    <div class="clero-grid justify-content-center">
+        <div class="clero-card">
+          <img src="{{ papa.foto }}" alt="{{ papa.nome }}">
+          <p>{{ papa.nome }}</p>
+        </div>
+    </div>
+  </div>
+
+  <div class="clero-subsection mt-5">
+    <h5>Bispos Diocesanos</h5>
+    <div class="clero-grid justify-content-center">
+      {% for bispo in site.metadata.bispos %}
+        <div class="clero-card">
+          <img src="{{ bispo.foto }}" alt="{{ bispo.nome }}">
+          <p>{{ bispo.nome }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="clero-subsection mt-5">
+    <h5>Todos os Párocos</h5>
+    <div class="clero-grid justify-content-center">
+      {% for paroco in site.metadata.padres %}
+        <div class="clero-card">
+          <img src="{{ paroco.foto }}" alt="{{ paroco.nome }}">
+          <p>{{ paroco.nome }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

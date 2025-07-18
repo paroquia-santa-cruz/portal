@@ -1,0 +1,8 @@
+.navbar-gradient {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(143, 133, 83, 0.6), transparent);
+  z-index: 1;
+}
