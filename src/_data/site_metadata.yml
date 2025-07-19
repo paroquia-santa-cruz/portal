@@ -4,11 +4,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.metadata.myvariable }}.
 
-meses: "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro"
+title: Paróquia Santa Cruz
 
- 
-description: >-
-  Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+meses: "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro"
 
 paroquia: >-
   No coração de Barueri, uma história de fé, perseverança e milagres se desenrola através dos séculos. A Paróquia Santa Cruz, cujas raízes remontam ao século XVIII, nasceu de uma trilha sagrada e se tornou um farol de esperança para toda a comunidade.

@@ -34,18 +34,18 @@ function renderLiturgia(data) {
 
   const corTag = getCorClasse(data.cor);
 
-  let html = `
-    <div class="d-flex flex-wrap justify-content-center mb-5 gap-3">
-      <div class="badge bg-dark text-white">Data</div>
-      <div class="badge bg-info text-dark">${data.data}</div>
+  // let html = `
+  //   <div class="d-flex flex-wrap justify-content-center mb-5 gap-3">
+  //     <div class="badge bg-dark text-white">Data</div>
+  //     <div class="badge bg-info text-dark">${data.data}</div>
 
-      <div class="badge bg-dark text-white">Tipo</div>
-      <div class="badge bg-primary text-white">${data.liturgia}</div>
+  //     <div class="badge bg-dark text-white">Tipo</div>
+  //     <div class="badge bg-primary text-white">${data.liturgia}</div>
 
-      <div class="badge bg-dark text-white">Cor</div>
-      <div class="badge ${corTag}">${data.cor}</div>
-    </div>
-  `;
+  //     <div class="badge bg-dark text-white">Cor</div>
+  //     <div class="badge ${corTag}">${data.cor}</div>
+  //   </div>
+  // `;
 
   if (data.antifonas?.entrada) {
     html += `<h5><strong>Antífona de Entrada</strong></h5><p>${data.antifonas.entrada}</p>`;

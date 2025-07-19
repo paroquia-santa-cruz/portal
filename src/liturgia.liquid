@@ -14,24 +14,25 @@ title: "Liturgia Diária"
 </div>
 
 <div class="container mt-5 pt-3">
-  <div class="row" style="margin-bottom: 60px;">
-    <div class="col-8">
-      <h1 class="mb-4">Liturgia Diária</h1>
+  <div class="row align-items-center flex-column flex-md-row mb-5">
+    <div class="col-md-8 text-center text-md-start mb-3 mb-md-0">
+      <h1 class="mb-3">Liturgia Diária</h1>
     </div>
-    <div class="col-4">
-      <form id="formLiturgia" class="mb-0">
-        <div class="input-group">
-          <input
-            type="date"
-            id="inputData"
-            class="form-control"
-            name="data"
-            value="{{ 'now' | date: '%Y-%m-%d' }}"
-          >
-          <button class="btn btn-outline-dark" type="submit">Buscar</button>
-        </div>
+    <div class="col-md-4 text-center text-md-end">
+      <form id="formLiturgia" class="d-flex flex-column flex-md-row align-items-center gap-2">
+        <input
+          type="date"
+          id="inputData"
+          class="form-control"
+          name="data"
+          value="{{ 'now' | date: '%Y-%m-%d' }}"
+          style="max-width: 200px;"
+        >
+        <button class="btn btn-outline-dark" type="submit">Buscar</button>        
       </form>
-      <p class="mt-0"><small>Pesquise as datas necessárias</small></p>
+      <div class="col-6 text-start d-none d-md-block">
+        <p class="far fa-calendar-alt"><small> Pesquise as datas necessárias</small></p>
+      </div>
     </div>
   </div>
 
@@ -48,15 +49,21 @@ title: "Liturgia Diária"
         {% else %} {% assign cor_tag = 'bg-secondary text-white' %}
       {% endcase %}
 
-      <div class="d-flex flex-wrap justify-content-center mb-5 gap-3">
-        <div class="badge bg-dark text-white">Data</div>
-        <div class="badge bg-info text-dark">{{ liturgia.data }}</div>
+      <div class="liturgia-meta-badges text-start mb-5">
+        <div class="mb-3">
+          <span class="badge bg-dark stl-1">Cor</span>
+          <span class="badge {{ cor_tag }} stl-2">{{ site.data.liturgia_hoje.cor }}</span>
 
-        <div class="badge bg-dark text-white">Tipo</div>
-        <div class="badge bg-primary text-white">{{ liturgia.liturgia }}</div>
+        </div>
+        <div class="mb-3">
+          <span class="badge bg-dark stl-1">Data</span>
+          <span class="badge bg-info text-dark stl-2">{{ site.data.liturgia_hoje.data }}</span>
 
-        <div class="badge bg-dark text-white">Cor</div>
-        <div class="badge {{ cor_tag }}">{{ liturgia.cor }}</div>
+        </div>
+        <div class="mb-3">
+          <span class="badge bg-dark stl-1">Tipo</span>
+          <span class="badge bg-primary stl-2">{{ site.data.liturgia_hoje.liturgia }}</span>
+        </div>
       </div>
 
       {% assign oracoes = liturgia.oracoes %}

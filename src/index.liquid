@@ -1,80 +1,49 @@
 ---
 layout: default
-title: "Página Inicial"
+title: "Home"
 ---
 
 <div id="carouselExample" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
   <div class="carousel-inner">
     {% for item in site.data.carrossel %}
       <div class="carousel-item {% if forloop.first %}active{% endif %}">
-        <img
-          src="{{ item.src }}"
-          class="d-block w-100 carousel-img"
-          alt="Imagem {{ forloop.index }}"
-          style="object-position: {{ item.position }};"
-        >
+        <img src="{{ item.src }}" class="d-block w-100 carousel-img" alt="Imagem {{ forloop.index }}" style="object-position: {{ item.position }};">
       </div>
     {% endfor %}
   </div>
 </div>
 
 <div class="container my-5">
-  <div class="d-flex align-items-center bg-light rounded p-3 shadow-sm">
-    <img 
-      src="/assets/images/socio-operario-biblia.png" 
-      alt="Campanha Bíblia Personalizada" 
-      class="me-3" 
-      style="width: 150px; height: auto; border-radius: 8px;"
-    >
-
-    <div class="d-flex flex-column align-items-center me-4">
-      <img 
-        src="/assets/images/socio-operario-logo.png" 
-        alt="Logo Sócio Operário" 
-        style="height: 80px; width: auto;"
-      >
+  <div class="d-flex flex-column flex-md-row align-items-center bg-light rounded p-3 shadow-sm gap-3">
+    <img src="/assets/images/socio-operario-biblia.png" alt="Campanha Bíblia Personalizada" style="width: 150px; height: auto; border-radius: 8px;">
+    <div class="d-flex flex-column align-items-center">
+      <img src="/assets/images/socio-operario-logo.png" alt="Logo Sócio Operário" style="height: 80px; width: auto;">
     </div>
-
-    <div class="flex-grow-1 ps-3">
+    <div class="flex-grow-1 ps-md-3 text-center text-md-start">
       <h5 class="fw-bold mb-2">CAMPANHA SÓCIOS-OPERÁRIOS</h5>
-      <p class="mb-0">
-        Cadastre-se como um sócio operário e contribua com o projeto de revitalização da nossa Igreja Matriz.
-      </p>
+      <p class="mb-0">Cadastre-se como um sócio operário e contribua com o projeto de revitalização da nossa Igreja Matriz.</p>
     </div>
   </div>
 </div>
 
 <div class="container my-5">
   <h1 class="section-title mb-4">HORÁRIOS PAROQUIAIS</h1>
-
   <div class="row mb-5">
-    <div class="col-6 me-4">
+    <div class="col-12 col-md-6 mb-3 mb-md-0">
       <h5 class="mb-4">Santa Missa</h5>
       <div class="schedule-box">
-        <div class="schedule-item">
-          <strong>Domingos</strong><br>07:30, 10:30 e 18:00
-        </div>
-        <div class="schedule-item">
-          <strong>Quinta-feira</strong><br>07:30, 10:30 e 18:00
-        </div>
-        <div class="schedule-item">
-          <strong>Sexta-feira</strong><br>07:30, 10:30 e 18:00
-        </div>
+        <div class="schedule-item"><strong>Domingos</strong><br>07:30, 10:30 e 18:00</div>
+        <div class="schedule-item"><strong>Quinta-feira</strong><br>07:30, 10:30 e 18:00</div>
+        <div class="schedule-item"><strong>Sexta-feira</strong><br>07:30, 10:30 e 18:00</div>
       </div>
     </div>
 
-    <div class="col-auto ms-5">
+    <div class="col-12 col-md-6">
       <h5 class="mb-4">Confissões</h5>
       <div class="schedule-box">
-        <div class="schedule-item">
-          <strong>Domingos</strong><br>07:30, 10:30 e 18:00
-        </div>
-        <div class="schedule-item">
-          <strong>Quinta-feira</strong><br>07:30, 10:30 e 18:00
-        </div>
-        <div class="schedule-item">
-          <strong>Sexta-feira</strong><br>07:30, 10:30 e 18:00
-        </div>
+        <div class="schedule-item"><strong>Domingos</strong><br>07:30, 10:30 e 18:00</div>
+        <div class="schedule-item"><strong>Quinta-feira</strong><br>07:30, 10:30 e 18:00</div>
+        <div class="schedule-item"><strong>Sexta-feira</strong><br>07:30, 10:30 e 18:00</div>
       </div>
     </div>
   </div>
@@ -110,7 +79,7 @@ title: "Página Inicial"
     </div>
   </div>
 </div>
- 
+
 {% assign meses = site.metadata.meses | split: "," %}
 
 <div class="container my-5 mt-5">
@@ -122,7 +91,6 @@ title: "Página Inicial"
         {% assign mes_index = padre.inicio | date: "%-m" | minus: 1 %}
         {% assign mes_nome = meses[mes_index] %}
         {% assign ano = padre.inicio | date: "%Y" %}
-
         <div class="col-md-6 mb-4 mt-3">
           <div class="d-flex align-items-center gap-3">
             <img src="{{ padre.foto }}" alt="{{ padre.nome }}" class="rounded-circle" style="width: 70px; height: 70px; object-fit: cover;">
@@ -142,7 +110,6 @@ title: "Página Inicial"
 
 <div class="container my-5"> 
   <h1 class="section-title mb-4 mt-5">PRÓXIMOS EVENTOS</h1>
-
   <div class="row">
     {% assign proximos_eventos = site.data.eventos | slice: 0, 3 %}
     {% for evento in proximos_eventos %}
@@ -161,7 +128,6 @@ title: "Página Inicial"
         </div>
       </div>
 
-      <!-- Modal -->
       <div class="modal fade" id="modalEventoHome{{ forloop.index }}" tabindex="-1" aria-labelledby="modalLabelHome{{ forloop.index }}" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
@@ -183,18 +149,15 @@ title: "Página Inicial"
   </div>
 
   <div class="text-center mt-4 mb-5">
-    <a href="/evento" class="btn btn-warning text-uppercase fw-bold px-4 py-2">
-      CALENDÁRIO COMPLETO
-    </a>
+    <a href="/evento" class="btn btn-warning text-uppercase fw-bold px-4 py-2">CALENDÁRIO COMPLETO</a>
   </div>
 </div>
 
 <div class="container my-5">
   <h1 class="section-title mb-4 mt-5">NOSSAS COMUNIDADES</h1>
-
   <div class="row gx-5">
     {% for comunidade in site.data.comunidades %}
-      <div class="col-md-6 mb-4 m">
+      <div class="col-md-6 mb-4">
         <div class="d-flex p-3 gap-3 shadow-sm rounded bg-white h-100">
           <img src="{{ comunidade.imagem }}" alt="{{ comunidade.nome }}" class="rounded" style="width: 120px; height: 120px; object-fit: cover;">
           <div>
@@ -213,16 +176,9 @@ title: "Página Inicial"
 
 <div class="container my-5">
   <h1 class="section-title mb-4">BLOG DA CRUZ</h1>
-  <p class="lead mt-4">
-    Não deixe de acessar nosso mais novo <strong>Blog da Cruz</strong> — um espaço dedicado a você! 
-    Aqui, você encontrará notícias atualizadas da nossa comunidade, recados importantes, opiniões inspiradoras e conteúdos que aproximam nossa fé e vida cotidiana.
-  </p>
-  <p class="mb-4">
-    Quer ficar por dentro dos eventos, reflexões e novidades da Paróquia? O Blog da Cruz é o lugar certo para se conectar, aprender e participar ativamente.
-  </p>
+  <p class="lead mt-4">Não deixe de acessar nosso mais novo <strong>Blog da Cruz</strong> — um espaço dedicado a você!</p>
+  <p class="mb-4">Quer ficar por dentro dos eventos, reflexões e novidades da Paróquia? O Blog da Cruz é o lugar certo para se conectar, aprender e participar ativamente.</p>
   <div class="text-center">
-    <a href="/evento" class="btn btn-warning text-uppercase fw-bold px-4 py-2" role="button" aria-label="Acessar o Blog da Cruz">
-      ACESSAR BLOG
-    </a>
+    <a href="/evento" class="btn btn-warning text-uppercase fw-bold px-4 py-2" role="button" aria-label="Acessar o Blog da Cruz">ACESSAR BLOG</a>
   </div>
 </div>
